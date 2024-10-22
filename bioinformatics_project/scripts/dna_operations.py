@@ -24,16 +24,20 @@ complements = {
 }
 
 def complement(sequence): # returns complement of DNA sequence
+    sequence.upper()
     complement_sequence = ""
+    sequence.upper()
     for n in sequence:
         complement_sequence += complements[n]
     return complement_sequence
 
 def reverse(sequence): # returns reverse of DNA sequence
+    sequence.upper()
     reverse_sequence = sequence[::-1] 
     return reverse_sequence
 
 def reverse_complement(sequence): # returns reverse complement of DNA sequence
+    sequence.upper()
     complement_sequence = complement(sequence)
     reverse_of_comp = reverse(complement_sequence)
     return reverse_of_comp
@@ -46,7 +50,8 @@ if __name__ == "__main__":
     complement_sequence = complement(args.sequence)
     reverse_sequence = reverse(args.sequence)
     reverse_of_comp = reverse_complement(args.sequence)
-
-	print(f"Original sequence: {args.sequence} /n Complement: {comp} /n Reverse: {rev} /n Reverse complement: {revcomp}")
-
-
+    
+    print(f"Original sequence: {args.sequence}") 
+    print(f"Complement sequence: {complement_sequence}") 
+    print(f"Reverse sequence: {reverse_sequence}") 
+    print(f"Reverse of complement sequence: {reverse_of_comp}")
